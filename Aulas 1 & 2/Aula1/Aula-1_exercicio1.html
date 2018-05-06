@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <div id="exercicio">
+            <p>{{ nome + ', ' + idade }}</p>
+            <p>Idade multiplicada por 3: {{idade*3}}</p>
+            <p>Float aleatório entre 0 e 1: {{calculaAleatorio()}}</p>
+            <p>Imagem <img src=""></p>
+        </div>
+    <script>
+        new Vue({
+            el: '#exercicio',
+            data: {
+                nome: 'Pedro',
+                idade: 28,
+                floatAleatorio: 0,
+            },
+            methods:{
+                alteraNome: function(event){this.nome=event.target.value}
+                },
+            methods:{
+                    calculaAleatorio: function(){return Math.random()}
+                }
+            
+        })
+    </script>
+</body>
+</html>

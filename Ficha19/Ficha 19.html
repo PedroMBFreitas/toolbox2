@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio7</title>
+</head>
+
+<body>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <div id="exercicio7">
+        <button @click="toggle = !toggle">botão</button>
+        <transition name="desvanecer">
+            <div v-if="toggle">Texto2</div>
+        </transition>
+    </div>
+    <style>
+        .desvanecer-enter{
+            opacity: 0;
+        }
+        .desvendar-enter-active{
+            transition: 3s;
+        }
+        .desvanecer-leave{
+            opacity: 1;
+        }
+        .desvanecer-leave-active{
+            transition: opacity 3s;
+            opacity: 0;  
+        }
+    </style>
+    <script>
+        new Vue({
+            el: '#exercicio7',
+            data: {
+                toggle: false
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

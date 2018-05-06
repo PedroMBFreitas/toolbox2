@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  v-on  pode se usar apenas o "@" | v-bind pode se usar apenas os ":"    -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <div id="app">
+        <button @click="valor=valor+1">
+                <p>{{valor}}</p>
+        </button>
+        <button @click="Incrementa(5)">
+                <p>{{valor}}</p>
+        </button>
+        <button @MouseMove="calculaCoord">
+            <p>{{x}}</p>
+            <p>{{y}}</p>
+        </button>
+        <input @keyup.Enter.space="alerta">
+
+    </div>
+    <script>
+        vue=new Vue({
+            el:'#app',
+            data: {
+                valor: 0,
+                x:0,
+                y:0,
+            },
+            methods:{
+                Incrementa: function(num){
+                    this.valor+=num
+                },
+                calculaCoord: function(event){
+                    this.x=event.clientX,
+                    this.y=event.clientY
+                },
+                alerta:function(event){
+                    alert('asdf')
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
